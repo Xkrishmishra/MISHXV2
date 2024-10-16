@@ -29,7 +29,7 @@ from strings import get_string
 #--------------------------
 
 NEXI_VID = [
-"https://i.imgur.com/x0g1hST.mp4",
+"https://envs.sh/T_7.mp4",
 "https://graph.org/file/5922a83b355489ba0853a.mp4",
 "https://i.imgur.com/1s2ndl9.mp4",
 "https://i.imgur.com/me5ik3b.mp4",
