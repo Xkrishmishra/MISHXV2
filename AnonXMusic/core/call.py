@@ -629,4 +629,4 @@ class Call(PyTgCalls):
                 autoend[chat_id] = {}
 
 
-Dns = Call()
+Anony = Call()
