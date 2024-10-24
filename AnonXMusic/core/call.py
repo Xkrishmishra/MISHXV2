@@ -19,9 +19,9 @@ from pytgcalls.types import (
 
 import config
 from strings import get_string
-from DnsXMusic import LOGGER, YouTube, app
-from DnsXMusic.misc import db
-from DnsXMusic.utils.database import (
+from AnonXMusic import LOGGER, YouTube, app
+from AnonXMusic.misc import db
+from AnonXMusic.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_audio_bitrate,
