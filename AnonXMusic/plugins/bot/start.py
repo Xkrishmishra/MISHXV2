@@ -28,14 +28,14 @@ from strings import get_string
 
 #--------------------------
 
-NEXI_VID = [
-"https://envs.sh/T_7.mp4",
-"https://graph.org/file/5922a83b355489ba0853a.mp4",
-"https://i.imgur.com/1s2ndl9.mp4",
-"https://envs.sh/T_v.mp4",
-"https://envs.sh/T_H.mp4",
-"https://envs.sh/Tjb.mp4",
-"https://i.imgur.com/6gBBk8H.mp4",
+START_IMG_URL = [
+"https://envs.sh/jx0.png",
+"https://envs.sh/jx0.png",
+"https://envs.sh/jx0.png",
+"https://envs.sh/jx0.png",
+"https://envs.sh/jx0.png",
+"https://envs.sh/jx0.png",
+"https://envs.sh/jx0.png",
 
 ]
 
