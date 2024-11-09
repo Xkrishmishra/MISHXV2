@@ -1,17 +1,14 @@
 import time
-import random
+
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 import config
 from AnonXMusic import app
 from AnonXMusic.misc import _boot_
 from AnonXMusic.plugins.sudo.sudoers import sudoers_list
-from AnonXMusic.utils.database import get_served_chats, get_served_users, get_sudoers
-from AnonXMusic.utils import bot_sys_stats
 from AnonXMusic.utils.database import (
     add_served_chat,
     add_served_user,
@@ -26,20 +23,6 @@ from AnonXMusic.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
-#--------------------------
-
-START_IMG_URL = [
-"https://envs.sh/jx0.png",
-"https://envs.sh/jx0.png",
-"https://envs.sh/jx0.png",
-"https://envs.sh/jx0.png",
-"https://envs.sh/jx0.png",
-"https://envs.sh/jx0.png",
-"https://envs.sh/jx0.png",
-
-]
-
-
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
@@ -49,8 +32,8 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
-            return await message.reply_video(
-                random.choice(NEXI_VID),
+            return await message.reply_photo(
+                photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -101,8 +84,8 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        await message.reply_video(
-            random.choice(NEXI_VID),
+        await message.reply_photo(
+            photo=config.START_IMG_URL,
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
@@ -118,8 +101,8 @@ async def start_pm(client, message: Message, _):
 async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
-    await message.reply_video(
-        random.choice(NEXI_VID),
+    await message.reply_photo(
+        photo=config.START_IMG_URL,
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -153,10 +136,10 @@ async def welcome(client, message: Message):
                     return await app.leave_chat(message.chat.id)
 
                 out = start_panel(_)
-                await message.reply_video(
-                    random.choice(NEXI_VID),
+                await message.reply_photo(
+                    photo=config.START_IMG_URL,
                     caption=_["start_3"].format(
-                        message.from_user.mention,
+                        message.from_user.first_name,
                         app.mention,
                         message.chat.title,
                         app.mention,
@@ -167,4 +150,3 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
-                
